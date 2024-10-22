@@ -1,5 +1,7 @@
-import {initializeApp} from "firebase/app";
-import{getFirestore}from "firebase/firestore";
+// firebase.js
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth"; // Importando o Auth
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBdNP3vkowk55Rj6FbuOe3bierYMyS7ieQ",
@@ -8,7 +10,8 @@ const firebaseConfig = {
     storageBucket: "refeicaoapp-7b460.appspot.com",
     messagingSenderId: "154187940018",
     appId: "1:154187940018:web:25e933cbf3903baa6149ab"
-  };
+};
 
 const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app); // Exporta o Auth
 export const firestore = getFirestore(app);
